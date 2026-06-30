@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Movement Medicine — Brand Strategy & Web Design Case Study by Matthew Andreus Narca" />
+  <title>Movement Medicine — Matthew Narca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="cs-nav" id="csNav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">Matthew Narca</a>
+    <a href="../index.html#work" class="cs-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M13 7H1M1 7L6 2M1 7L6 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Work
+    </a>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="cs-eyebrow">
+      <span class="tag">Brand Strategy</span>
+      <span class="tag">Brand Identity</span>
+      <span class="tag">Web Design</span>
+      <span class="tag">Web Development</span>
+    </div>
+    <h1 class="cs-title">Movement<br>Medicine</h1>
+  </div>
+</section>
+
+<div class="cs-hero-image">
+  <img src="../images/movement-medicine/01.matthewnarca_portfolio_movement_medicine-01_casestudy_overview.jpeg" alt="Movement Medicine — overview" />
+</div>
+
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-grid">
+
+      <div class="cs-sidebar">
+        <span class="cs-sidebar-label">Project</span>
+        <h2 class="cs-sidebar-heading">Movement Medicine</h2>
+
+        <span class="cs-sidebar-label">Services</span>
+        <p class="cs-sidebar-meta">
+          Brand Strategy<br>
+          Brand Identity<br>
+          Web Design<br>
+          Web Development
+        </p>
+        <br>
+        <span class="cs-sidebar-label">Result</span>
+        <p class="cs-sidebar-meta">2x Booking Increase<br>Post-Launch</p>
+      </div>
+
+      <div class="cs-blocks">
+        <div>
+          <span class="cs-block-label">Challenge</span>
+          <p class="cs-block-text large">Position Movement Medicine, a physical therapy clinic in West LA, as a premium, community-centered practice in a competitive market. The brand needed to feel modern and credible while remaining warm and approachable to new patients.</p>
+        </div>
+        <div>
+          <span class="cs-block-label">Approach</span>
+          <p class="cs-block-text">We built the brand from the ground up, starting with strategy to define the clinic's positioning, voice, and visual direction. The identity was designed to convey movement, trust, and vitality. The website was then developed to translate that identity into a seamless digital experience optimized for patient acquisition.</p>
+        </div>
+        <div>
+          <span class="cs-block-label">Outcome</span>
+          <p class="cs-block-text">A cohesive brand and web presence that gave Movement Medicine the credibility to compete in West LA's premium wellness market. Bookings increased by 2x following the launch.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cs-gallery">
+  <div class="container">
+    <div class="cs-gallery-grid">
+      <img src="../images/movement-medicine/02.matthewnarca_portfolio_movement_medicine-04.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/03.matthewnarca_portfolio_movement_medicine-09.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/04.matthewnarca_portfolio_movement_medicine-28.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/05.matthewnarca_portfolio_movement_medicine-16.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/06.matthewnarca_portfolio_movement_medicine-15.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/07.matthewnarca_portfolio_movement_medicine-14.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/08.matthewnarca_portfolio_movement_medicine-17.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/09.matthewnarca_portfolio_movement_medicine-20.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/10.matthewnarca_portfolio_movement_medicine-21.jpeg" alt="Movement Medicine" loading="lazy" />
+      <img src="../images/movement-medicine/11.matthewnarca_portfolio_movement_medicine-13.jpeg" alt="Movement Medicine" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<div class="cs-nav-footer">
+  <div class="container">
+    <a href="pattern-inc.html" class="cs-nav-link">
+      <span class="cs-nav-link-label">Previous Project</span>
+      <span class="cs-nav-link-title">← Pattern Inc.</span>
+    </a>
+    <a href="dreambooks-co.html" class="cs-nav-link right">
+      <span class="cs-nav-link-label">Next Project</span>
+      <span class="cs-nav-link-title">DreamBooks Co. →</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Matthew Andreus Narca</span>
+      <span class="footer-copy">&copy; <span class="footer-year"></span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());
+  const nav = document.getElementById('csNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+</body>
+</html>

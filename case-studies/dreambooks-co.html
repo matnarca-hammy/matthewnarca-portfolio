@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DreamBooks Co. — Identity Refresh Case Study by Matthew Andreus Narca" />
+  <title>DreamBooks Co. — Matthew Narca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="cs-nav" id="csNav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">Matthew Narca</a>
+    <a href="../index.html#work" class="cs-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M13 7H1M1 7L6 2M1 7L6 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Work
+    </a>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="cs-eyebrow">
+      <span class="tag">Identity Refresh</span>
+      <span class="tag">Illustration</span>
+      <span class="tag">Collateral Design</span>
+      <span class="tag">Digital Design</span>
+    </div>
+    <h1 class="cs-title">DreamBooks<br>Co.</h1>
+    <p class="cs-collab">In collaboration with Vicarel Studios</p>
+  </div>
+</section>
+
+<div class="cs-hero-image">
+  <img src="../images/dreambooks/01.matthew_narca_portfolio_dreambooks-46_casestudy_overview.jpg" alt="DreamBooks Co. — overview" />
+</div>
+
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-grid">
+
+      <div class="cs-sidebar">
+        <span class="cs-sidebar-label">Project</span>
+        <h2 class="cs-sidebar-heading">DreamBooks Co.</h2>
+
+        <span class="cs-sidebar-label">Collaboration</span>
+        <p class="cs-sidebar-meta">Vicarel Studios</p>
+        <br>
+        <span class="cs-sidebar-label">Services</span>
+        <p class="cs-sidebar-meta">
+          Identity Refresh<br>
+          Illustration<br>
+          Collateral Design<br>
+          Digital Design
+        </p>
+      </div>
+
+      <div class="cs-blocks">
+        <div>
+          <span class="cs-block-label">Challenge</span>
+          <p class="cs-block-text large">DreamBooks Co., a neighborhood used bookstore, had built its brand incrementally over the years. Without a strong visual position or clear art direction guidelines, the brand became fragmented across assets and styles, resulting in a lack of cohesion across all communications.</p>
+        </div>
+        <div>
+          <span class="cs-block-label">Approach</span>
+          <p class="cs-block-text">Research revealed that used bookstore brands often feel impersonal and sterile. To deliver a real used bookstore experience, we drew inspiration from well-loved books, page annotations, and marginal notes — creating a system using texture, custom illustration, and stamps.</p>
+        </div>
+        <div>
+          <span class="cs-block-label">Outcome</span>
+          <p class="cs-block-text">A character-driven identity that brought warmth back to DreamBooks, spanning logo, illustration, typography, stamps, and collateral. The system functions seamlessly across physical and digital touchpoints.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cs-gallery">
+  <div class="container">
+    <div class="cs-gallery-grid">
+      <img src="../images/dreambooks/02.matthew_narca_portfolio_dreambooks-01.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/03.matthew_narca_portfolio_dreambooks-37.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/04.matthew_narca_portfolio_dreambooks-39.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/05.matthew_narca_portfolio_dreambooks-40.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/06.matthew_narca_portfolio_dreambooks-41.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/07.matthew_narca_portfolio_dreambooks-42.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/08.matthew_narca_portfolio_dreambooks-43.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/09.matthew_narca_portfolio_dreambooks-44.jpg" alt="DreamBooks Co." loading="lazy" />
+      <img src="../images/dreambooks/10.matthew_narca_portfolio_dreambooks-45.jpg" alt="DreamBooks Co." loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<div class="cs-nav-footer">
+  <div class="container">
+    <a href="movement-medicine.html" class="cs-nav-link">
+      <span class="cs-nav-link-label">Previous Project</span>
+      <span class="cs-nav-link-title">← Movement Medicine</span>
+    </a>
+    <a href="house-of-delish.html" class="cs-nav-link right">
+      <span class="cs-nav-link-label">Next Project</span>
+      <span class="cs-nav-link-title">House of Delish →</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Matthew Andreus Narca</span>
+      <span class="footer-copy">&copy; <span class="footer-year"></span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());
+  const nav = document.getElementById('csNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+</body>
+</html>
