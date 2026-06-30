@@ -473,6 +473,38 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 
 .form-submit:hover { background: var(--gold); color: var(--black); opacity: 1; }
 
+/* ─── Contact Feedback ─── */
+.contact-feedback { max-width: 680px; }
+
+.contact-success,
+.contact-error {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(.95rem, 1.5vw, 1.05rem);
+  line-height: 1.8;
+}
+
+.contact-success strong {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  display: block;
+  margin-bottom: .4rem;
+  color: var(--black);
+  letter-spacing: -.01em;
+}
+
+.contact-success { color: var(--muted); }
+
+.contact-error {
+  color: var(--muted);
+}
+
+.contact-error a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ─── Footer ─── */
 footer { padding: 2.5rem 0; }
 
