@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,7 +22,7 @@ html { scroll-behavior: smooth; font-size: 20.8px; }
 body {
   background: var(--white);
   color: var(--black);
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +43,7 @@ a { color: inherit; text-decoration: none; }
 
 .section-label {
   display: block;
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .7rem;
   font-weight: 600;
   letter-spacing: .22em;
@@ -71,8 +71,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-logo {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: .85rem;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -86,7 +86,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-links a {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .8rem;
   font-weight: 400;
   color: var(--muted);
@@ -132,9 +132,9 @@ a { color: inherit; text-decoration: none; }
 .mobile-nav.open { display: flex; }
 
 .mobile-nav a {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.5rem, 10vw, 4.5rem);
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: -.02em;
   color: var(--black);
@@ -144,7 +144,11 @@ a { color: inherit; text-decoration: none; }
 .mobile-nav a:hover { color: var(--gold); }
 
 /* ─── Sections ─── */
-section { padding: clamp(5rem, 10vw, 10rem) 0; }
+section {
+  padding: clamp(5rem, 10vw, 10rem) 0;
+  position: relative;
+  background: var(--white);
+}
 
 /* ─── Hero ─── */
 .hero {
@@ -152,13 +156,31 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
   display: flex;
   align-items: center;
   padding-top: 5rem;
+  background: transparent;
 }
 
-.hero-content { max-width: 900px; }
+.hero-content { max-width: 900px; position: relative; z-index: 1; }
+
+.hero-photo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+}
 
 .hero-headline {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(3.5rem, 9vw, 6rem);
   line-height: .95;
   text-transform: none;
@@ -186,7 +208,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
   display: inline-block;
   background: var(--black);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .78rem;
   font-weight: 600;
   letter-spacing: .1em;
@@ -198,7 +220,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 .btn-primary:hover { background: var(--gold); color: var(--black); opacity: 1; }
 
 .btn-secondary {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .95rem;
   font-weight: 400;
   color: var(--black);
@@ -210,11 +232,11 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 .btn-secondary:hover { color: var(--muted); }
 
 /* ─── About ─── */
-.about { padding-top: 0; }
+.about { padding-top: 0; background: transparent; }
 
 .about-headline {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   line-height: 1.05;
   letter-spacing: -.02em;
@@ -237,8 +259,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 
 /* ─── Services & Process (two-col grid) ─── */
 .section-headline {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   letter-spacing: -.02em;
   color: var(--black);
@@ -265,7 +287,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 }
 
 .grid-item-num {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .75rem;
   font-weight: 400;
   color: var(--muted);
@@ -274,8 +296,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 }
 
 .grid-item-title {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   letter-spacing: -.01em;
   color: var(--black);
@@ -293,8 +315,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 .work-header { margin-bottom: clamp(3rem, 6vw, 5rem); }
 
 .work-headline {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   letter-spacing: -.02em;
   color: var(--black);
@@ -338,8 +360,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 .work-item:hover .work-item-image img { transform: scale(1.03); }
 
 .work-item-name {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -.02em;
   color: var(--black);
@@ -358,8 +380,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 
 /* ─── Testimonials ─── */
 .testimonials-headline {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   letter-spacing: -.02em;
   color: var(--black);
@@ -375,8 +397,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 }
 
 .testimonial-name {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   letter-spacing: -.01em;
   color: var(--black);
@@ -402,8 +424,8 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 
 /* ─── Contact ─── */
 .contact-headline {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   letter-spacing: -.02em;
   color: var(--black);
@@ -422,7 +444,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 .form-field { display: flex; flex-direction: column; }
 
 .form-field label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .68rem;
   font-weight: 600;
   letter-spacing: .15em;
@@ -438,7 +460,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
   border-bottom: 1px solid var(--black);
   border-radius: 0;
   padding: .5rem 0 .75rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
   color: var(--black);
   outline: none;
@@ -459,7 +481,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
   display: inline-block;
   background: var(--black);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .78rem;
   font-weight: 600;
   letter-spacing: .1em;
@@ -478,14 +500,14 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 
 .contact-success,
 .contact-error {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: clamp(.95rem, 1.5vw, 1.05rem);
   line-height: 1.8;
 }
 
 .contact-success strong {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   display: block;
   margin-bottom: .4rem;
@@ -506,7 +528,7 @@ section { padding: clamp(5rem, 10vw, 10rem) 0; }
 }
 
 /* ─── Footer ─── */
-footer { padding: 2.5rem 0; }
+footer { padding: 2.5rem 0; position: relative; background: var(--white); }
 
 .footer-inner {
   display: flex;
@@ -517,15 +539,15 @@ footer { padding: 2.5rem 0; }
 
 .footer-name,
 .footer-copy {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .78rem;
   color: var(--muted);
 }
 
 /* case study footer elements */
 .footer-logo {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: .85rem;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -609,7 +631,7 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-back {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .8rem;
   font-weight: 400;
   color: var(--muted);
@@ -636,7 +658,7 @@ footer { padding: 2.5rem 0; }
 }
 
 .tag {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .68rem;
   font-weight: 500;
   letter-spacing: .12em;
@@ -652,8 +674,8 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-title {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: clamp(4rem, 9vw, 9rem);
   line-height: .9;
   color: var(--black);
@@ -662,7 +684,7 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-collab {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .85rem;
   color: var(--muted);
   display: flex;
@@ -694,7 +716,7 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-sidebar-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .68rem;
   font-weight: 600;
   letter-spacing: .2em;
@@ -705,8 +727,8 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-sidebar-heading {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-size: 1.6rem;
   letter-spacing: -.02em;
   color: var(--black);
@@ -714,7 +736,7 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-sidebar-meta {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .88rem;
   color: var(--muted);
   line-height: 1.85;
@@ -723,7 +745,7 @@ footer { padding: 2.5rem 0; }
 .cs-blocks { display: flex; flex-direction: column; gap: 3.5rem; }
 
 .cs-block-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .68rem;
   font-weight: 600;
   letter-spacing: .2em;
@@ -756,9 +778,9 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-image-placeholder {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 400;
   color: rgba(0,0,0,.08);
   text-transform: uppercase;
   letter-spacing: .12em;
@@ -785,7 +807,7 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-nav-link-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: .68rem;
   font-weight: 600;
   letter-spacing: .15em;
@@ -795,9 +817,9 @@ footer { padding: 2.5rem 0; }
 }
 
 .cs-nav-link-title {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -.01em;
   color: var(--black);
   transition: color .2s;
@@ -810,6 +832,31 @@ footer { padding: 2.5rem 0; }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+
+  .hero {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+
+  .hero-photo {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: calc(55vh - 5rem);
+    z-index: 0;
+  }
+
+  .hero-photo img { object-position: top center; }
+
+  .hero .container { position: relative; z-index: 1; margin-top: 48vh; }
+
+  .hero-content {
+    background: var(--white);
+    padding-top: 2rem;
+  }
 
   .two-col-grid { grid-template-columns: 1fr; }
 
