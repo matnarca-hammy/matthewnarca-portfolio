@@ -38,19 +38,26 @@
 
 <!-- ─── Hero ─── -->
 <section class="hero" id="hero">
-  <div class="hero-photo">
-    <img src="images/matthew_narca_headshot_bw.png" alt="Matthew Narca" />
+  <div class="hero-bg">
+    <img src="images/pattern/02.matthew_narca_portfolio_pattern-17.jpg" alt="" />
+    <div class="hero-overlay"></div>
   </div>
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-headline">Freelance<br>Creative</h1>
-      <p class="hero-sub">I help brands take control of their story and show up with confidence. From brand foundation to digital experience.</p>
-      <div class="hero-actions">
-        <a href="#work" class="btn-primary">View My Work</a>
-        <a href="#contact" class="btn-secondary">Get in Touch</a>
-      </div>
+  <div class="hero-content">
+    <h1 class="hero-headline" id="heroHeadline" aria-live="polite">
+      <span class="hero-headline-word is-active">Brand Strategy</span>
+    </h1>
+    <p class="hero-sub">I help brands take control of their story and show up with confidence. From brand foundation to digital experience.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#work" class="btn-secondary">View My Work</a>
     </div>
   </div>
+  <a href="#about" class="hero-scroll" id="heroScroll" aria-label="Scroll down">
+    <span>Scroll</span>
+    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+      <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </section>
 
 <!-- ─── About ─── -->
@@ -210,7 +217,7 @@
       </div>
 
       <div class="testimonial-item reveal">
-        <h3 class="testimonial-name">Lolibeth Malcolm</h3>
+        <h3 class="testimonial-name">Beth M.</h3>
         <p class="testimonial-role">Owner, Yaya 911 Caregiving Services</p>
         <p class="testimonial-quote">Matt was very professional and suggested great solutions before starting my website. He did a great job creating a logo and website for my company, Yaya 911. Ever since the new website, our business has increased and I get a lot of compliments.</p>
       </div>
@@ -326,6 +333,36 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Hero headline word-swap
+  const heroWords = ['Brand Strategy', 'Brand Identity', 'Web Design & Dev', 'Creative Direction'];
+  const heroHeadline = document.getElementById('heroHeadline');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (heroHeadline && !reducedMotion) {
+    let heroIndex = 0;
+    setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroWords.length;
+      const current = heroHeadline.querySelector('.hero-headline-word');
+      const next = document.createElement('span');
+      next.className = 'hero-headline-word';
+      next.textContent = heroWords[heroIndex];
+      heroHeadline.appendChild(next);
+      current.classList.remove('is-active');
+      current.classList.add('is-leaving');
+      requestAnimationFrame(() => next.classList.add('is-active'));
+      setTimeout(() => current.remove(), 400);
+    }, 2900);
+  } else if (heroHeadline && reducedMotion) {
+    heroHeadline.querySelector('.hero-headline-word').textContent = heroWords[0];
+  }
+
+  // Hero scroll indicator — fade in after 1.5s
+  const heroScroll = document.getElementById('heroScroll');
+  if (heroScroll) {
+    setTimeout(() => heroScroll.classList.add('visible'), 1500);
+  }
+
 </script>
 
 </body>
