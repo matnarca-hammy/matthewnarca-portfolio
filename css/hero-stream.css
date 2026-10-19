@@ -1,0 +1,78 @@
+/* ─── Hero — image corridor (index2) ─── */
+.hs-stream {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  /* Corridor lengths are cqw, so on tall narrow screens keep it wide enough to read */
+  width: max(100%, 140svh);
+  transform: translateX(-50%);
+  z-index: 0;
+  overflow: hidden;
+  container-type: inline-size;
+  pointer-events: none;
+}
+
+.hs-view,
+.hs-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.hs-stage { transform-style: preserve-3d; }
+
+.hs-card {
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.hs-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Darkens the centre so the headline reads over the stream */
+.hs-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 50%, rgba(13, 13, 13, .85) 0%, rgba(13, 13, 13, .55) 55%, rgba(13, 13, 13, .2) 100%);
+}
+
+/* Static headline — no word-swap, so it sizes to its own text */
+.hs .hs-headline {
+  min-height: 0;
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  .hs .hs-headline { min-height: 0; }
+  .hs-scrim {
+    background: radial-gradient(ellipse 90% 60% at 50% 50%, rgba(13, 13, 13, .85) 0%, rgba(13, 13, 13, .6) 60%, rgba(13, 13, 13, .3) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Pause rather than remove — cards are already placed mid-flight, so it freezes as a full still */
+  .hs-card { animation-play-state: paused !important; }
+}
+
+/* ─── Nav over the hero — transparent until scrolled ─── */
+.nav {
+  transition: padding .3s, background-color .3s;
+}
+
+.nav-logo,
+.nav-links a { transition: color .3s; }
+.hamburger span { transition: .3s, background-color .3s; }
+
+.nav:not(.scrolled):not(.menu-open) { background: transparent; }
+.nav:not(.scrolled):not(.menu-open) .nav-logo { color: var(--white); }
+.nav:not(.scrolled):not(.menu-open) .nav-links a { color: rgba(255, 255, 255, .75); }
+.nav:not(.scrolled):not(.menu-open) .nav-links a:hover { color: var(--white); }
+.nav:not(.scrolled):not(.menu-open) .hamburger span { background: var(--white); }

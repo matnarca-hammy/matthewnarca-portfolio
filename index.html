@@ -9,13 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index-list.css" />
+  <link rel="stylesheet" href="css/hero-stream.css" />
 </head>
 <body>
 
 <!-- ─── Navigation ─── -->
 <nav class="nav" id="nav">
   <div class="container">
-    <a href="#" class="nav-logo">Matthew Narca</a>
+    <a href="#" class="nav-logo" aria-label="Matthew Narca — home"><svg viewBox="0 0 94.231 80.188" aria-hidden="true" focusable="false"><path fill="currentColor" d="M92.752.357c-.893-.501-2.031-.474-2.915.072l-42.721,26.698L4.392.427C3.513-.116,2.366-.141,1.484.353.568.851,0,1.816,0,2.869v74.442c0,1.055.568,2.018,1.479,2.514.893.501,2.034.471,2.916-.072l16.091-10.057c.413-.26.754-.622.988-1.044.238-.424.361-.907.361-1.394v-30.004l68.005,42.501c.462.283.987.433,1.522.433.485,0,.967-.126,1.387-.361.916-.498,1.484-1.461,1.484-2.516V2.869c0-1.053-.568-2.018-1.479-2.511ZM63.514,42.802l10.643,6.648c.77.519,1.827.525,2.601-.014.233-.171.426-.368.581-.597.348-.503.478-1.113.364-1.719-.114-.599-.453-1.122-.916-1.439-.096-.079-.191-.13-.294-.182l-8.641-5.409,8.843-5.53c1.109-.608,1.517-2.009.907-3.12-.213-.397-.534-.712-.898-.893-.687-.388-1.562-.386-2.213-.025-.099.051-.202.117-.238.15l-27.138,16.957-25.486-15.936c-.866-.532-1.997-.57-2.913-.07-.911.512-1.479,1.475-1.479,2.514v32.168l-12.641,7.9V5.975l40.991,25.614c.916.579,2.141.579,3.057.002L89.635,5.975v68.232l-38.183-23.865,12.062-7.539Z"/></svg></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -37,15 +39,28 @@
 </div>
 
 <!-- ─── Hero ─── -->
-<section class="hero" id="hero">
-  <div class="hero-bg">
-    <img src="images/pattern/02.matthew_narca_portfolio_pattern-17.jpg" alt="" />
-    <div class="hero-overlay"></div>
+<section class="hero hs" id="hero">
+  <!-- Corridor of case study images — cards are built from this list by the script below -->
+  <div class="hs-stream" id="heroStream" aria-hidden="true">
+    <div class="hs-source" hidden>
+      <img src="images/accelerate/01.matthewnarca_portfolio_accelerate24-07_casestudy_overview.jpg" alt="" data-project="Accelerate 2024" />
+      <img src="images/dreambooks/01.matthew_narca_portfolio_dreambooks-46_casestudy_overview.jpg" alt="" data-project="Dream Books Co." />
+      <img src="images/house-of-delish/01.matthewnarca_portfolio_houseofdelish-60_casestudy_overview.jpg" alt="" data-project="The House of Delish" />
+      <img src="images/movement-medicine/01.matthewnarca_portfolio_movement_medicine-01_casestudy_overview.jpeg" alt="" data-project="Movement Medicine" />
+      <img src="images/pattern/01.matthew_narca_portfolio_pattern-60_casestudy_overview.jpg" alt="" data-project="Pattern Inc." />
+      <img src="images/pt-works-delaware/pt_works_portfolio_images_website_mockup_on_macbook.jpeg" alt="" data-project="PT Works Delaware" />
+      <img src="images/accelerate/03.matthewnarca_portfolio_accelerate24-08.jpg" alt="" data-project="Accelerate 2024" />
+      <img src="images/dreambooks/03.matthew_narca_portfolio_dreambooks-37.jpg" alt="" data-project="Dream Books Co." />
+      <img src="images/house-of-delish/03.matthewnarca_portfolio_houseofdelish-49.jpg" alt="" data-project="The House of Delish" />
+      <img src="images/movement-medicine/04.matthewnarca_portfolio_movement_medicine-28.jpeg" alt="" data-project="Movement Medicine" />
+      <img src="images/pattern/03.matthew_narca_portfolio_pattern-18.jpg" alt="" data-project="Pattern Inc." />
+      <img src="images/pt-works-delaware/pt_works_portfolio_images_website_before_and_after.jpeg" alt="" data-project="PT Works Delaware" />
+    </div>
   </div>
+  <div class="hs-scrim" aria-hidden="true"></div>
+
   <div class="hero-content">
-    <h1 class="hero-headline" id="heroHeadline" aria-live="polite">
-      <span class="hero-headline-word is-active">Brand Strategy</span>
-    </h1>
+    <h1 class="hero-headline hs-headline">A brand people remember, trust, and choose.</h1>
     <p class="hero-sub">I help brands take control of their story and show up with confidence. From brand foundation to digital experience.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Get in Touch</a>
@@ -63,11 +78,18 @@
 <!-- ─── About ─── -->
 <section class="about" id="about">
   <div class="container">
-    <span class="section-label">About</span>
-    <h2 class="about-headline">Nice to meet you.</h2>
-    <div class="about-body">
-      <p>My mission is to help brands take control of their story and show up with confidence. I work with founders and growing businesses to build identities that are strategic, cohesive, and built to last, from the brand foundation all the way to the digital experience.</p>
-      <p>I've worked across industries creating a wide range of digital and brand experiences such as logos, visual identities, websites, and UI designs. Now, I focus on helping brands build strong foundations through custom strategy, distinctive design, and thoughtful execution.</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-label">About</span>
+        <h2 class="about-headline">Nice to meet you.</h2>
+        <div class="about-body">
+          <p>My mission is to help brands take control of their story and show up with confidence. I work with founders and growing businesses to build identities that are strategic, cohesive, and built to last, from the brand foundation all the way to the digital experience.</p>
+          <p>I've worked across industries creating a wide range of digital and brand experiences such as logos, visual identities, websites, and UI designs. Now, I focus on helping brands build strong foundations through custom strategy, distinctive design, and thoughtful execution.</p>
+        </div>
+      </div>
+      <figure class="about-photo reveal">
+        <img src="images/matthew_narca_headshot.jpg" alt="Matthew Narca smiling, wearing a grey crew-neck sweater" width="1024" height="1024" loading="lazy" decoding="async" />
+      </figure>
     </div>
   </div>
 </section>
@@ -117,33 +139,32 @@
       <h2 class="section-headline">Approach</h2>
       <p class="section-intro">Process is at the core of everything I do. A clear process keeps projects on track, sets expectations, and ensures the work always moves forward with intention.</p>
     </div>
-    <div class="two-col-grid">
-
-      <div class="reveal">
+    <ol class="process-flow">
+      <li class="process-step reveal" style="--i: 0">
+        <div class="process-marker" aria-hidden="true"><span class="process-dot"></span><span class="process-line"></span></div>
         <p class="grid-item-num">01</p>
         <h3 class="grid-item-title">Research</h3>
         <p class="grid-item-desc">Understanding the business, audience, competitors, and market context.</p>
-      </div>
-
-      <div class="reveal">
+      </li>
+      <li class="process-step reveal" style="--i: 1">
+        <div class="process-marker" aria-hidden="true"><span class="process-dot"></span><span class="process-line"></span></div>
         <p class="grid-item-num">02</p>
         <h3 class="grid-item-title">Strategy</h3>
         <p class="grid-item-desc">Defining positioning, brand direction, and a clear creative brief.</p>
-      </div>
-
-      <div class="reveal">
+      </li>
+      <li class="process-step reveal" style="--i: 2">
+        <div class="process-marker" aria-hidden="true"><span class="process-dot"></span><span class="process-line"></span></div>
         <p class="grid-item-num">03</p>
         <h3 class="grid-item-title">Design</h3>
         <p class="grid-item-desc">Translating strategy into visual systems and digital experiences.</p>
-      </div>
-
-      <div class="reveal">
+      </li>
+      <li class="process-step reveal" style="--i: 3">
+        <div class="process-marker" aria-hidden="true"><span class="process-dot"></span><span class="process-line"></span></div>
         <p class="grid-item-num">04</p>
         <h3 class="grid-item-title">Deliver</h3>
         <p class="grid-item-desc">Handing off polished, production-ready assets with full documentation.</p>
-      </div>
-
-    </div>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -153,51 +174,97 @@
     <div class="work-header">
       <span class="section-label">Work</span>
       <h2 class="work-headline">Featured Work</h2>
-      <p class="work-scroll-hint">(scroll to explore)</p>
+      <p class="work-scroll-hint">(hover or tap a project to preview)</p>
     </div>
 
-    <div class="work-list">
-
-      <a href="case-studies/accelerate-2024.html" class="work-item reveal">
-        <div class="work-item-image">
-          <img src="images/accelerate/01.matthewnarca_portfolio_accelerate24-07_casestudy_overview.jpg" alt="Accelerate 2024" loading="lazy" />
+    <div class="il-root reveal" id="workIndex" role="region" aria-roledescription="carousel" aria-label="Featured projects" tabindex="0">
+      <div class="il-list">
+        <div class="il-label" aria-hidden="true"><span>Selected projects</span><span>06</span></div>
+        <div class="il-row" data-on="1" data-href="case-studies/accelerate-2024.html" data-title="Accelerate 2024">
+          <button type="button" class="il-btn" aria-current="true">
+            <span class="il-num">01</span>
+            <span class="il-title">Accelerate 2024</span>
+          </button>
+          <div class="il-more">
+            <div class="il-more-inner">
+              <p class="il-tags">Concept Development / Event Identity / Collateral</p>
+              <a href="case-studies/accelerate-2024.html" class="il-link">View case study</a>
+            </div>
+          </div>
         </div>
-        <h3 class="work-item-name">Accelerate 2024</h3>
-        <p class="work-item-tags">Concept Development / Event Identity / Collateral</p>
+        <div class="il-row" data-on="0" data-href="case-studies/pattern-inc.html" data-title="Pattern Inc.">
+          <button type="button" class="il-btn">
+            <span class="il-num">02</span>
+            <span class="il-title">Pattern Inc.</span>
+          </button>
+          <div class="il-more">
+            <div class="il-more-inner">
+              <p class="il-tags">Print / Merch / Office Interior / Socials / Blog / Digital</p>
+              <a href="case-studies/pattern-inc.html" class="il-link">View case study</a>
+            </div>
+          </div>
+        </div>
+        <div class="il-row" data-on="0" data-href="case-studies/movement-medicine.html" data-title="Movement Medicine">
+          <button type="button" class="il-btn">
+            <span class="il-num">03</span>
+            <span class="il-title">Movement Medicine</span>
+          </button>
+          <div class="il-more">
+            <div class="il-more-inner">
+              <p class="il-tags">Brand Strategy / Brand Identity / Web Design / Web Development</p>
+              <a href="case-studies/movement-medicine.html" class="il-link">View case study</a>
+            </div>
+          </div>
+        </div>
+        <div class="il-row" data-on="0" data-href="case-studies/dreambooks-co.html" data-title="Dream Books Co.">
+          <button type="button" class="il-btn">
+            <span class="il-num">04</span>
+            <span class="il-title">Dream Books Co.</span>
+          </button>
+          <div class="il-more">
+            <div class="il-more-inner">
+              <p class="il-tags">Identity Refresh / Illustration / Collateral / Digital Design</p>
+              <a href="case-studies/dreambooks-co.html" class="il-link">View case study</a>
+            </div>
+          </div>
+        </div>
+        <div class="il-row" data-on="0" data-href="case-studies/house-of-delish.html" data-title="The House of Delish">
+          <button type="button" class="il-btn">
+            <span class="il-num">05</span>
+            <span class="il-title">The House of Delish</span>
+          </button>
+          <div class="il-more">
+            <div class="il-more-inner">
+              <p class="il-tags">Brand Strategy / Messaging / Brand Identity / Collateral</p>
+              <a href="case-studies/house-of-delish.html" class="il-link">View case study</a>
+            </div>
+          </div>
+        </div>
+        <div class="il-row" data-on="0" data-href="case-studies/pt-works-delaware.html" data-title="PT Works Delaware">
+          <button type="button" class="il-btn">
+            <span class="il-num">06</span>
+            <span class="il-title">PT Works Delaware</span>
+          </button>
+          <div class="il-more">
+            <div class="il-more-inner">
+              <p class="il-tags">Website Strategy / Website Development / Content &amp; Copywriting</p>
+              <a href="case-studies/pt-works-delaware.html" class="il-link">View case study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="il-pane" id="ilPane" href="case-studies/accelerate-2024.html" aria-label="View case study: Accelerate 2024">
+        <img src="images/accelerate/01.matthewnarca_portfolio_accelerate24-07_casestudy_overview.jpg" alt="Accelerate 24 wordmark with a teal 24 flag on a deep navy gradient" data-alt="Accelerate 24 wordmark with a teal 24 flag on a deep navy gradient" data-l="on" width="1920" height="1080" loading="lazy" decoding="async" draggable="false" />
+        <img src="images/pattern/01.matthew_narca_portfolio_pattern-60_casestudy_overview.jpg" alt="" data-alt="Pattern employee wellness program graphic with glassy 3D shapes over bold type on electric blue" data-l="after" width="1920" height="1080" loading="lazy" decoding="async" draggable="false" />
+        <img src="images/movement-medicine/01.matthewnarca_portfolio_movement_medicine-01_casestudy_overview.jpeg" alt="" data-alt="Movement Medicine logo, a green circle with a figure in motion, on navy" data-l="after" width="1920" height="1080" loading="lazy" decoding="async" draggable="false" />
+        <img src="images/dreambooks/01.matthew_narca_portfolio_dreambooks-46_casestudy_overview.jpg" alt="" data-alt="Dream Books Co. wordmark in cobalt surrounded by library-card and badge-style stickers" data-l="after" width="1920" height="1080" loading="lazy" decoding="async" draggable="false" />
+        <img src="images/house-of-delish/01.matthewnarca_portfolio_houseofdelish-60_casestudy_overview.jpg" alt="" data-alt="The House of Delish hexagon logo in tomato red over a cream pattern of food doodles" data-l="after" width="1920" height="1080" loading="lazy" decoding="async" draggable="false" />
+        <img src="images/pt-works-delaware/pt_works_portfolio_images_website_mockup_on_macbook.jpeg" alt="" data-alt="PT Works Delaware redesigned homepage shown on a laptop" data-l="after" width="1920" height="1080" loading="lazy" decoding="async" draggable="false" />
+        <span class="il-pane-cta" aria-hidden="true">View case study</span>
       </a>
 
-      <a href="case-studies/pattern-inc.html" class="work-item reveal">
-        <div class="work-item-image">
-          <img src="images/pattern/01.matthew_narca_portfolio_pattern-60_casestudy_overview.jpg" alt="Pattern Inc." loading="lazy" />
-        </div>
-        <h3 class="work-item-name">Pattern Inc.</h3>
-        <p class="work-item-tags">Print / Merch / Office Interior / Socials / Blog / Digital</p>
-      </a>
-
-      <a href="case-studies/movement-medicine.html" class="work-item reveal">
-        <div class="work-item-image">
-          <img src="images/movement-medicine/01.matthewnarca_portfolio_movement_medicine-01_casestudy_overview.jpeg" alt="Movement Medicine" loading="lazy" />
-        </div>
-        <h3 class="work-item-name">Movement Medicine</h3>
-        <p class="work-item-tags">Brand Strategy / Brand Identity / Web Design / Web Development</p>
-      </a>
-
-      <a href="case-studies/dreambooks-co.html" class="work-item reveal">
-        <div class="work-item-image">
-          <img src="images/dreambooks/01.matthew_narca_portfolio_dreambooks-46_casestudy_overview.jpg" alt="Dream Books Co." loading="lazy" />
-        </div>
-        <h3 class="work-item-name">Dream Books Co.</h3>
-        <p class="work-item-tags">Identity Refresh / Illustration / Collateral / Digital Design</p>
-      </a>
-
-      <a href="case-studies/house-of-delish.html" class="work-item reveal">
-        <div class="work-item-image">
-          <img src="images/house-of-delish/01.matthewnarca_portfolio_houseofdelish-60_casestudy_overview.jpg" alt="The House of Delish" loading="lazy" />
-        </div>
-        <h3 class="work-item-name">The House of Delish</h3>
-        <p class="work-item-tags">Brand Strategy / Messaging / Brand Identity / Collateral</p>
-      </a>
-
+      <div class="il-sr" id="ilLive" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -275,6 +342,7 @@
   <div class="container">
     <div class="footer-inner">
       <span class="footer-name">Matthew Andreus Narca</span>
+      <a href="#" class="footer-mark" aria-label="Matthew Narca — home"><svg viewBox="0 0 94.231 80.188" aria-hidden="true" focusable="false"><path fill="currentColor" d="M92.752.357c-.893-.501-2.031-.474-2.915.072l-42.721,26.698L4.392.427C3.513-.116,2.366-.141,1.484.353.568.851,0,1.816,0,2.869v74.442c0,1.055.568,2.018,1.479,2.514.893.501,2.034.471,2.916-.072l16.091-10.057c.413-.26.754-.622.988-1.044.238-.424.361-.907.361-1.394v-30.004l68.005,42.501c.462.283.987.433,1.522.433.485,0,.967-.126,1.387-.361.916-.498,1.484-1.461,1.484-2.516V2.869c0-1.053-.568-2.018-1.479-2.511ZM63.514,42.802l10.643,6.648c.77.519,1.827.525,2.601-.014.233-.171.426-.368.581-.597.348-.503.478-1.113.364-1.719-.114-.599-.453-1.122-.916-1.439-.096-.079-.191-.13-.294-.182l-8.641-5.409,8.843-5.53c1.109-.608,1.517-2.009.907-3.12-.213-.397-.534-.712-.898-.893-.687-.388-1.562-.386-2.213-.025-.099.051-.202.117-.238.15l-27.138,16.957-25.486-15.936c-.866-.532-1.997-.57-2.913-.07-.911.512-1.479,1.475-1.479,2.514v32.168l-12.641,7.9V5.975l40.991,25.614c.916.579,2.141.579,3.057.002L89.635,5.975v68.232l-38.183-23.865,12.062-7.539Z"/></svg></a>
       <span class="footer-copy">&copy; <span class="footer-year"></span></span>
     </div>
   </div>
@@ -293,9 +361,15 @@
   // Hamburger
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
-  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+    nav.classList.toggle('menu-open', mobileNav.classList.contains('open'));
+  });
   document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => mobileNav.classList.remove('open'));
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      nav.classList.remove('menu-open');
+    });
   });
 
   // Contact form — inline submission
@@ -334,34 +408,182 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Hero headline word-swap
-  const heroWords = ['Brand Strategy', 'Brand Identity', 'Web Design & Dev', 'Creative Direction'];
-  const heroHeadline = document.getElementById('heroHeadline');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Hero — image corridor
+  // Two rails of cards ride from a vanishing point toward the viewer. Each
+  // card is a constant ratio bigger than the one behind it, the rails open
+  // hard early then hold, and new cards are born across the axis so the
+  // centre is always covered. All lengths are cqw, so it scales with width.
+  (() => {
+    const stream = document.getElementById('heroStream');
+    if (!stream) return;
+    const images = [...stream.querySelectorAll('.hs-source img')].map(img => img.getAttribute('src'));
+    const P = {
+      perspective: 30, cardWidth: 18, cardHeight: 25, cardRadius: 0.4,
+      birthHeight: 2.6, exitHeight: 46, railBirth: -11, railExit: 44,
+      fan: 3.3, stops: 24,
+      // No Y-rotation — turning the cards skews them into trapezoids that read as stretched images
+      turnBirth: 0, turnExit: 0,
+    };
+    const CARDS = 9;     // per rail
+    const SPEED = 18;    // seconds for one card to cross the corridor
+    const AXIS = 55;     // vertical position of the vanishing point, %
 
-  if (heroHeadline && !reducedMotion) {
-    let heroIndex = 0;
-    setInterval(() => {
-      heroIndex = (heroIndex + 1) % heroWords.length;
-      const current = heroHeadline.querySelector('.hero-headline-word');
-      const next = document.createElement('span');
-      next.className = 'hero-headline-word';
-      next.textContent = heroWords[heroIndex];
-      heroHeadline.appendChild(next);
-      current.classList.remove('is-active');
-      current.classList.add('is-leaving');
-      requestAnimationFrame(() => next.classList.add('is-active'));
-      setTimeout(() => current.remove(), 400);
-    }, 2900);
-  } else if (heroHeadline && reducedMotion) {
-    heroHeadline.querySelector('.hero-headline-word').textContent = heroWords[0];
-  }
+    const keyframes = (dir, name) => {
+      const steps = [];
+      for (let s = 0; s <= P.stops; s++) {
+        const u = s / P.stops;
+        const scale = (P.birthHeight / P.cardHeight) * Math.pow(P.exitHeight / P.birthHeight, u);
+        const z = P.perspective * (1 - 1 / scale);
+        const rail = P.railExit - (P.railExit - P.railBirth) * Math.pow(1 - u, P.fan);
+        const turn = P.turnBirth + (P.turnExit - P.turnBirth) * u;
+        steps.push(`${(u * 100).toFixed(2)}%{transform:translate3d(${(dir * rail).toFixed(2)}cqw,0,${z.toFixed(2)}cqw) rotateY(${(-dir * turn).toFixed(2)}deg)}`);
+      }
+      return `@keyframes ${name}{${steps.join('')}}`;
+    };
+
+    const style = document.createElement('style');
+    style.textContent = keyframes(1, 'hs-right') + keyframes(-1, 'hs-left');
+    document.head.appendChild(style);
+
+    const view = document.createElement('div');
+    view.className = 'hs-view';
+    view.style.perspective = P.perspective + 'cqw';
+    view.style.perspectiveOrigin = `50% ${AXIS}%`;
+    const stage = document.createElement('div');
+    stage.className = 'hs-stage';
+    view.appendChild(stage);
+
+    // The left rail starts half a project-cycle into the list, so the two sides
+    // never show the same project at the same depth
+    const LEFT_OFFSET = 3;
+    [['hs-right', 0], ['hs-left', LEFT_OFFSET]].forEach(([name, offset]) => {
+      for (let i = 0; i < CARDS; i++) {
+        const card = document.createElement('div');
+        card.className = 'hs-card';
+        Object.assign(card.style, {
+          top: AXIS + '%',
+          width: P.cardWidth + 'cqw',
+          height: P.cardHeight + 'cqw',
+          marginLeft: -P.cardWidth / 2 + 'cqw',
+          marginTop: -P.cardHeight / 2 + 'cqw',
+          borderRadius: P.cardRadius + 'cqw',
+          animation: `${name} ${SPEED}s linear infinite`,
+          // Negative delay drops each card mid-flight, so the corridor is full on the first frame
+          animationDelay: -(i * SPEED) / CARDS + 's',
+        });
+        const img = document.createElement('img');
+        img.src = images[(i + offset) % images.length];
+        img.alt = '';
+        img.decoding = 'async';
+        img.draggable = false;
+        card.appendChild(img);
+        stage.appendChild(card);
+      }
+    });
+
+    stream.appendChild(view);
+  })();
 
   // Hero scroll indicator — fade in after 1.5s
   const heroScroll = document.getElementById('heroScroll');
   if (heroScroll) {
     setTimeout(() => heroScroll.classList.add('visible'), 1500);
   }
+
+  // Work — index list carousel
+  (() => {
+    const root = document.getElementById('workIndex');
+    if (!root) return;
+    const rows = [...root.querySelectorAll('.il-row')];
+    const imgs = [...root.querySelectorAll('.il-pane img')];
+    const pane = document.getElementById('ilPane');
+    const live = document.getElementById('ilLive');
+    const n = rows.length;
+    const AUTOPLAY = 4500;
+    const wrap = (i) => ((i % n) + n) % n;
+    // Which layer a picture is: wiping in, the one it covers, or waiting
+    // clipped on the side it will wipe in from.
+    const layerOf = (i, active, previous) =>
+      i === active ? 'on' : i === previous ? 'was' : i > active ? 'after' : 'before';
+
+    let active = 0;
+    let previous = -1;
+
+    const render = () => {
+      rows.forEach((row, i) => {
+        const on = i === active;
+        row.dataset.on = on ? '1' : '0';
+        const btn = row.querySelector('.il-btn');
+        if (on) btn.setAttribute('aria-current', 'true'); else btn.removeAttribute('aria-current');
+        row.querySelector('.il-more').inert = !on;
+      });
+      imgs.forEach((img, i) => {
+        img.dataset.l = layerOf(i, active, previous);
+        img.alt = i === active ? img.dataset.alt : '';
+      });
+      const row = rows[active];
+      pane.href = row.dataset.href;
+      pane.setAttribute('aria-label', 'View case study: ' + row.dataset.title);
+      live.textContent = row.dataset.title + ', ' + (active + 1) + ' of ' + n;
+    };
+
+    const show = (i) => {
+      if (i === active) return;
+      previous = active;
+      active = i;
+      render();
+    };
+
+    let lastTouch = 0;
+    const touch = () => { lastTouch = performance.now(); };
+
+    rows.forEach((row, i) => {
+      const btn = row.querySelector('.il-btn');
+      btn.addEventListener('mouseenter', () => show(i));
+      btn.addEventListener('focus', () => show(i));
+      btn.addEventListener('click', () => { touch(); show(i); });
+    });
+
+    root.addEventListener('keydown', (e) => {
+      let d = 0;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') d = 1;
+      else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') d = -1;
+      else return;
+      e.preventDefault();
+      touch();
+      const next = wrap(active + d);
+      show(next);
+      if (root.contains(document.activeElement) && document.activeElement !== root) {
+        rows[next].querySelector('.il-btn').focus();
+      }
+    });
+
+    // Autoplay — waits while the pointer or focus is inside, off-screen, or the tab is hidden
+    let inside = false;
+    let seen = false;
+    root.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') inside = true; });
+    root.addEventListener('pointerleave', () => { inside = false; });
+    new IntersectionObserver(([e]) => { seen = e.isIntersecting; }).observe(root);
+
+    // Hidden pictures are lazy, so fetch them all once the carousel is close — a wipe never reveals a blank frame
+    const preload = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      imgs.forEach(img => { img.loading = 'eager'; });
+      preload.disconnect();
+    }, { rootMargin: '600px 0px' });
+    preload.observe(root);
+
+    render();
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced && n > 1) {
+      setInterval(() => {
+        if (!seen || document.hidden || inside || root.contains(document.activeElement)) return;
+        if (performance.now() - lastTouch < AUTOPLAY) return;
+        show(wrap(active + 1));
+      }, AUTOPLAY);
+    }
+  })();
 
 </script>
 

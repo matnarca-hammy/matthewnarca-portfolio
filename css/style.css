@@ -71,12 +71,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
-  font-size: .85rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+  display: block;
   color: var(--black);
+}
+
+/* Inline SVG mark — fill is currentColor, so it follows the nav's text color */
+.nav-logo svg {
+  display: block;
+  height: 28px;
+  width: auto;
 }
 
 .nav-links {
@@ -325,6 +328,29 @@ section {
   line-height: 1.85;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 6rem);
+}
+
+/* Cream frame; multiply turns the photo's white studio backdrop into the frame color */
+.about-photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
 /* ─── Services & Process (two-col grid) ─── */
 .section-headline {
   font-family: 'Bebas Neue', sans-serif;
@@ -377,6 +403,130 @@ section {
   font-size: clamp(.85rem, 1.3vw, .95rem);
   color: var(--muted);
   line-height: 1.8;
+}
+
+/* ─── Process flow ─── */
+/* One row of steps joined by a line. A pulse runs along each segment in turn
+   (4s cycle, 1s per step) and lights each dot as it arrives. */
+.process-flow {
+  --step-gap: clamp(1.5rem, 3vw, 2.5rem);
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.process-step { padding-right: var(--step-gap); }
+
+.process-marker {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  /* Run the line through the padding so it meets the next step's dot */
+  margin-right: calc(-1 * var(--step-gap));
+  margin-bottom: 1.75rem;
+}
+
+.process-dot {
+  flex: none;
+  width: 11px;
+  height: 11px;
+  border: 1.5px solid var(--black);
+  border-radius: 50%;
+  background: var(--white);
+  animation: process-dot 4s ease-out infinite;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+.process-line {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  margin-right: .6rem;
+  background: var(--rule);
+  overflow: hidden;
+}
+
+.process-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, var(--black));
+  transform: translateX(-100%);
+  animation: process-pulse 4s linear infinite;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+/* The last line trails off — the process ends in delivery */
+.process-step:last-child .process-line {
+  -webkit-mask-image: linear-gradient(90deg, #000 30%, transparent);
+          mask-image: linear-gradient(90deg, #000 30%, transparent);
+}
+
+@keyframes process-pulse {
+  0%   { transform: translateX(-100%); }
+  25%  { transform: translateX(250%); }
+  100% { transform: translateX(250%); }
+}
+
+@keyframes process-dot {
+  0%   { background: var(--black); }
+  20%  { background: var(--white); }
+  100% { background: var(--white); }
+}
+
+@media (max-width: 768px) {
+  /* Stack the steps; the line turns vertical and the pulse runs downward */
+  .process-flow { grid-template-columns: 1fr; }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.25rem;
+    padding: 0 0 2.5rem;
+  }
+
+  .process-step > :not(.process-marker) { grid-column: 2; }
+
+  .process-marker {
+    grid-row: 1 / span 3;
+    flex-direction: column;
+    margin: .2rem 0 -2.5rem;
+  }
+
+  .process-line {
+    width: 1px;
+    height: auto;
+    margin: 0 0 .6rem;
+  }
+
+  .process-line::after {
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, transparent, var(--black));
+    transform: translateY(-100%);
+    animation-name: process-pulse-y;
+  }
+
+  .process-step:last-child { padding-bottom: 0; }
+
+  .process-step:last-child .process-line {
+    -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent);
+            mask-image: linear-gradient(180deg, #000 30%, transparent);
+  }
+
+  @keyframes process-pulse-y {
+    0%   { transform: translateY(-100%); }
+    25%  { transform: translateY(250%); }
+    100% { transform: translateY(250%); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-dot,
+  .process-line::after { animation: none; }
+  .process-line::after { display: none; }
 }
 
 /* ─── Work ─── */
@@ -599,10 +749,26 @@ section {
 footer { padding: 2.5rem 0; position: relative; background: var(--white); }
 
 .footer-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
+}
+
+.footer-copy { justify-self: end; }
+
+.footer-mark {
+  display: block;
+  color: var(--black);
+  transition: color .2s;
+}
+
+.footer-mark:hover { color: var(--gold); }
+
+.footer-mark svg {
+  display: block;
+  height: 26px;
+  width: auto;
 }
 
 .footer-name,
@@ -835,6 +1001,8 @@ footer { padding: 2.5rem 0; position: relative; background: var(--white); }
   color: #333333;
 }
 
+.cs-block-text + .cs-block-text { margin-top: 1.25rem; }
+
 .cs-image-block {
   margin: 3.5rem 0;
   background: var(--placeholder);
@@ -908,13 +1076,18 @@ footer { padding: 2.5rem 0; position: relative; background: var(--white); }
 
   .two-col-grid { grid-template-columns: 1fr; }
 
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { max-width: 360px; }
+
   .form-submit {
     align-self: stretch;
     text-align: center;
     width: 100%;
   }
 
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  .footer-inner { grid-template-columns: 1fr; justify-items: center; gap: .75rem; text-align: center; }
+  .footer-mark { order: -1; margin-bottom: .5rem; }
+  .footer-copy { justify-self: center; }
 
   .cs-grid { grid-template-columns: 1fr; }
   .cs-sidebar { position: static; }
